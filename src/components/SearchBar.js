@@ -1,6 +1,7 @@
 import React from "react";
 
 class SearchBar extends React.Component {
+  state = { term: "Marhaba" };
   render() {
     return (
       <div className="ui segment">
@@ -9,9 +10,11 @@ class SearchBar extends React.Component {
             {" "}
             Image Search
             <input
+              style={{ marginTop: "10PX" }}
               type="text"
-              onClick={this.onInputClick}
-              onChange={(e) => console.log(e.target.value)}
+              value={this.state.term}
+              onChange={(e) => this.setState({ term: e.target.value })}
+              placeholder="Type your search term..."
             />
           </label>
         </form>
