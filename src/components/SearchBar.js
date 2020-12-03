@@ -1,14 +1,6 @@
 import React from "react";
 
 class SearchBar extends React.Component {
-  onInputChange(event) {
-    console.log(event.target.value);
-  }
-
-  onInputClick(event) {
-    console.log("input is clicked");
-  }
-
   render() {
     return (
       <div className="ui segment">
@@ -19,7 +11,7 @@ class SearchBar extends React.Component {
             <input
               type="text"
               onClick={this.onInputClick}
-              onChange={this.onInputChange}
+              onChange={(e) => console.log(e.target.value)}
             />
           </label>
         </form>
